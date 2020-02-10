@@ -1,0 +1,108 @@
+.navbar {
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.-light {
+  border-bottom-color: #9eb7cd;
+}
+
+.navbar .logo {
+  width: 131px;
+  height: 37px;
+  background-size: 131px 37px;
+  background-image: url(../img/logo.png);
+}
+
+.navbar .logo:hover {
+  cursor: pointer;
+}
+
+.navbar.-light .logo {
+  background-image: url(../img/logo-purple.png);
+}
+
+.navbar ul,
+.navbar ul > li {
+  list-style-type: none;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul > li:not(:first-child) {
+  margin-left: 30px;
+}
+
+.navbar ul > li > a {
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar.-light ul > li > a {
+  color: #40719a;
+}
+
+.navbar.-light ul > li > a:hover {
+  color: #6e92b2;
+}
+
+.navbar ul > li > a:hover {
+  color: #fff;
+}
+
+.navbar .icon-menu {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    border-bottom: none;
+  }
+
+  .navbar.-light {
+    border-bottom: 1px solid #381d7c;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar .icon-menu {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: inline-flex;
+  }
+
+  .navbar.-light .icon-menu {
+    color: #381d7c;
+  }
+
+  .mobile-drawer {
+    display: flex;
+    min-width: 210px;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .mobile-drawer h4 {
+    font-size: 20px;
+    color: #808080;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .mobile-drawer a {
+    font-size: 18px;
+    color: #2a0c40;
+    text-decoration: none;
+    padding: 18px 50px 18px 20px;
+  }
+}

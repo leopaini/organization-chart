@@ -1,0 +1,179 @@
+.home {
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.home .message {
+  width: 500px;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home .message h5 {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 1.2px;
+}
+
+.home .message h6 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: bolder;
+  letter-spacing: -0.7px;
+}
+
+.home .message .actions {
+  display: flex;
+  padding-top: 32px;
+}
+
+.home .message .actions button {
+  height: 48px;
+  text-transform: none;
+  font-family: "Raleway", sans-serif;
+}
+
+.home .message .actions button.primary {
+  background-color: #0b8fa6;
+  margin-right: 20px;
+}
+
+.home .message .actions button.primary:hover {
+  background-color: #086a7b;
+}
+
+.home .message .actions button.secondary {
+  background-color: #533499;
+}
+
+.home .message .actions button.secondary:hover {
+  background-color: #422486;
+}
+
+.home .message .actions button span.MuiButton-label {
+  color: #fff;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.home .message .actions button:hover span.MuiButton-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home img {
+  z-index: 1;
+  width: 755px;
+  height: 655px;
+}
+
+.triangle {
+  width: 100%;
+  position: relative;
+}
+
+.triangle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -150px;
+  width: 0px;
+  height: 0px;
+  border-right: 486px solid transparent;
+  border-top: 0px solid transparent;
+  border-left: 1000px solid transparent;
+  border-bottom: 200px solid white;
+}
+
+@media (min-width: 1440px) {
+  .triangle::after {
+    border-right: 486px solid transparent;
+    border-top: 0px solid transparent;
+    border-left: 1000px solid transparent;
+    border-bottom: 200px solid white;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .triangle::after {
+    border-right: 405px solid transparent;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .home img {
+    width: 500px;
+    height: 450px;
+  }
+
+  .triangle::after {
+    border-right: 320px solid transparent;
+    border-left: 830px solid transparent;
+    border-bottom: 170px solid white;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .home {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home .message {
+    width: 100%;
+    padding: 40px 0;
+    align-items: center;
+  }
+
+  .home img {
+    width: 650px;
+    height: 570px;
+  }
+
+  .triangle::after {
+    border-right: 384px solid transparent;
+    border-top: 0px solid transparent;
+    border-left: 510px solid transparent;
+    border-bottom: 180px solid white;
+  }
+}
+
+@media (max-width: 767px) {
+  .home {
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .home .message {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .home .message .actions {
+    flex-direction: column;
+  }
+
+  .home .message .actions button.primary {
+    margin: 0 0 20px 0;
+  }
+
+  .home .message h5 {
+    font-size: 25px;
+    line-height: normal;
+  }
+
+  .home img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .triangle::after {
+    display: none;
+  }
+}

@@ -1,0 +1,219 @@
+.employees {
+  margin-top: 0;
+}
+
+.employees h2 {
+  margin: 10px 0;
+  font-size: 26px;
+  color: #2c6290;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+ul.structure-chart,
+ul.structure-chart ol,
+ul.structure-chart li,
+ul.structure-chart li > div {
+  position: relative;
+}
+
+/* Remove common style types */
+ul.structure-chart,
+ul.structure-chart ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.structure-chart {
+  text-align: center;
+}
+
+ul.structure-chart ol {
+  padding-top: 16px;
+}
+
+ul.structure-chart ol:before,
+ul.structure-chart ol:after,
+ul.structure-chart li:before,
+ul.structure-chart li:after,
+ul.structure-chart > li > div:before,
+ul.structure-chart > li > div:after {
+  content: "";
+  position: absolute;
+  background-color: #0f4c82;
+}
+
+ul.structure-chart ol > li {
+  padding: 16px 0 0 16px;
+}
+
+/* Vertical line from box */
+ul.structure-chart > li ol:before {
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 16px;
+}
+
+/* Horizontal line top */
+ul.structure-chart > li ol:after {
+  top: 16px;
+  left: -17px;
+  height: 3px;
+  width: calc(50% + 20px);
+}
+
+/* -- lines structure -- */
+ul.structure-chart > li ol > li:not(:last-of-type):before {
+  top: 45px;
+  left: -20px;
+  width: 35px;
+  height: 3px;
+}
+
+ul.structure-chart > li ol > li:not(:last-of-type):after {
+  top: 0;
+  width: 3px;
+  left: -20px;
+  height: 100%;
+}
+
+ul.structure-chart > li ol > li:last-of-type:before {
+  top: 45px;
+  left: -20px;
+  height: 3px;
+  width: 16px;
+}
+
+ul.structure-chart > li ol > li:last-of-type:after {
+  top: 0;
+  width: 3px;
+  left: -20px;
+  height: 45px;
+}
+
+/* -- Back color through positions -- */
+/* -- First Line -- */
+ul.structure-chart > li > div .id {
+  background-color: #124b80;
+}
+/* -- Second Line -- */
+ul.structure-chart > li > ol > li > div .id {
+  background-color: #67ac5b;
+}
+
+/* -- Third Line -- */
+ul.structure-chart > li > ol > li > ol > li > div .id {
+  background-color: #cdc836;
+}
+
+/* -- Fourth Line -- */
+ul.structure-chart > li > ol > li > ol > li > ol > li > div .id {
+  background-color: #bb0d86;
+}
+
+/* -- Fifht Line -- */
+ul.structure-chart > li > ol > li > ol > li > ol > li > ol > li > div .id {
+  background-color: #1588a7;
+}
+
+/*---- medias ----*/
+@media only screen and (min-width: 1024px) {
+  ul.structure-chart > li > div {
+    margin: 0 auto;
+  }
+
+  ul.structure-chart > li > ol > li:first-child {
+    padding-left: 16px;
+  }
+
+  ul.structure-chart > li > div:before {
+    bottom: -16px !important;
+    top: inherit !important;
+  }
+
+  ul.structure-chart > li > div:before {
+    height: 16px !important;
+    left: 50% !important;
+    width: 3px !important;
+  }
+
+  ul.structure-chart > li > div:only-of-type:after {
+    display: none;
+  }
+
+  ul.structure-chart > li > ol {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  ul.structure-chart > li > ol:before,
+  ul.structure-chart > li > ol > li:before {
+    height: 16px !important;
+    left: 50% !important;
+    top: 0 !important;
+    width: 3px !important;
+  }
+
+  ul.structure-chart > li > ol:after {
+    display: none;
+  }
+
+  ul.structure-chart > li > ol > li {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 16px 16px 0;
+  }
+
+  ul.structure-chart > li > ol > li:only-of-type {
+    padding-top: 0;
+  }
+
+  ul.structure-chart > li:only-of-type > div:before,
+  ul.structure-chart > li:only-of-type > div:after {
+    display: none;
+  }
+
+  ul.structure-chart > li > ol > li:only-of-type:before,
+  ul.structure-chart > li > ol > li:only-of-type:after {
+    display: none;
+  }
+
+  ul.structure-chart > li > ol > li:first-of-type:not(:only-of-type):after,
+  ul.structure-chart > li > ol > li:last-of-type:not(:only-of-type):after {
+    height: 3px;
+    top: 0;
+    width: 50%;
+  }
+
+  ul.structure-chart > li > ol > li:first-of-type:not(:only-of-type):after {
+    left: 50%;
+  }
+
+  ul.structure-chart > li > ol > li:last-of-type:not(:only-of-type):after {
+    left: 0;
+  }
+
+  ul.structure-chart > li > ol > li + li:not(:last-of-type):after {
+    height: 3px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  ul.structure-chart li {
+    width: 100%;
+    padding: 0 0 0 30px;
+    box-sizing: border-box;
+  }
+
+  ul.structure-chart li > div {
+    width: calc(100% - 30px);
+  }
+}
